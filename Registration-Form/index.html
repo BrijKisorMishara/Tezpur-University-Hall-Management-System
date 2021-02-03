@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html leng="en">
+<head>
+	<meta charset="utf-8">
+	<title>Registration Form</title>
+	<link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<script>
+		function validation()
+		{
+			var correct_name=/^[A-Za-z ]+$/;
+			var a=document.getElementById("username").value;
+			
+			
+
+			if (a=="")
+			{
+				alert("user name is empty");
+				return false;
+			}
+
+			
+			if (a.length<3)
+			{
+				alert("username name atlest 3 character");
+				return false;
+			}
+
+			if (a.length>20)
+			{
+				alert("username name must be less than 20 character");
+				return false;
+			}
+
+			if(!a.match(correct_name)){
+				alert(" only alphabets are allowed");
+				return false;
+			}
+
+			
+
+
+
+
+
+			var p1=document.getElementById("password1").value;
+			var p2=document.getElementById("password2").value;
+			
+		
+
+			if (p1=="")
+			{
+				alert(" please fill password");
+				return false;
+			}
+
+			
+			if (p1.length<3)
+			{
+				alert(" password name atlest 3 character");
+				return false;
+			}
+
+			if (p1.length>20)
+			{
+				alert("  password name must be less than 20 character");
+				return false;
+			}
+
+			
+
+
+
+			if (p1!=p2)
+			{
+				alert("  password are not same");
+				return false;
+			}
+
+			
+			var m=document.getElementById("mno").value;
+			if(isNaN(m))
+			 {
+			 	alert("  only number are allowed in Mobile number");
+				return false;
+
+			 }
+			 if(m.length<10)
+			 {
+			 	alert("  Mobile number must be 10 digit ");
+				return false;
+
+			 }
+
+
+		}
+	</script>
+
+
+	<div class="c1">
+		<div class="c2">
+			<img   src="TU_logo.png" id="i1" >
+			<h2>Register Here</h2>
+			<form action="Registration.php" method="post" onsubmit="return validation()">
+				<div>
+					<input type="text" name="username"  id="username" class="c3" placeholder="Username">
+					
+				</div>
+				<br>
+			
+				<div>
+					<input type="text" name="mno" id="mno" class="c3" placeholder="Mobile No">
+				</div>
+				<br>
+				<div>
+					<input type="Email" name="email" class="c3" placeholder="Email id">
+				</div>
+				<br>
+				<div>
+					<input type="Password" name="password" id="password1" class="c3" placeholder="Password">
+				</div>
+				<br>
+				<div>
+					<input type="password" name="password1" class="c3" placeholder="Re-Password">
+				</div>
+				
+				<br/>
+				<div>
+					<select name="userType" id="userType" class="c3"> 
+						<option value="none">Select</option>
+						<option value="inner">Belong to Tezpur university</option>
+						<option value="outer">Out Sider</option>
+					</select>
+					
+				</div>
+				<br>
+				<div>
+					<input type="radio" name="gender" class="c4" value="Male">Male
+					<input type="radio" name="gender" class="c4" value="Other">Other
+					<input type="radio" name="gender" class="c4" value="FeMale">FeMale
+				</div>
+	             <br>
+				<div>
+					<button type="submit"> REGISTER</button>
+	
+				</div>
+				<br>
+				<br/>
+			</form>
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>
